@@ -1,0 +1,338 @@
+/* Estilos específicos para machines-table.html */
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.table-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.section-header h1 {
+    color: #00ff00;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.view-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.view-controls .btn {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.view-controls .active {
+    background-color: #00ff00;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    border: 1px solid #444;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 150px;
+}
+
+.filter-group label {
+    color: #00ff00;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.filter-group select,
+.filter-group input {
+    padding: 0.5rem;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+    outline: none;
+    border-color: #00ff00;
+}
+
+#search-input {
+    min-width: 200px;
+}
+
+/* Tabla */
+.table-container {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    border: 1px solid #444;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.machines-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.machines-table th,
+.machines-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+.machines-table th {
+    background-color: #333;
+    color: #00ff00;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.machines-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.machines-table th.sortable:hover {
+    background-color: #3d3d3d;
+}
+
+.sort-arrow {
+    color: #666;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.machines-table th.sortable.asc .sort-arrow {
+    color: #00ff00;
+}
+
+.machines-table th.sortable.desc .sort-arrow {
+    color: #00ff00;
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+.machines-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.machines-table tbody tr:hover {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.machines-table tbody tr.hidden {
+    display: none;
+}
+
+.machine-name strong {
+    color: #fff;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.machine-name small {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.difficulty {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.difficulty.easy {
+    background-color: #28a745;
+    color: white;
+}
+
+.difficulty.medium {
+    background-color: #ffc107;
+    color: black;
+}
+
+.difficulty.hard {
+    background-color: #dc3545;
+    color: white;
+}
+
+.vuln-tag {
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    margin: 0.1rem;
+    display: inline-block;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-small.btn-primary {
+    background-color: #00ff00;
+    color: #000;
+    font-weight: bold;
+}
+
+.btn-small.btn-primary:hover {
+    background-color: #00cc00;
+    transform: translateY(-2px);
+}
+
+.btn-small.btn-secondary {
+    background-color: transparent;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+.btn-small.btn-secondary:hover {
+    background-color: #00ff00;
+    color: #000;
+}
+
+.table-info {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9rem;
+    padding: 1rem;
+}
+
+.table-info span {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .section-header h1 {
+        font-size: 2rem;
+    }
+
+    .filters {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        min-width: auto;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .machines-table {
+        min-width: 800px;
+    }
+
+    .machines-table th,
+    .machines-table td {
+        padding: 0.5rem;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .btn-small {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+/* Estados de loading y vacío */
+.table-loading {
+    text-align: center;
+    padding: 2rem;
+    color: #aaa;
+}
+
+.table-empty {
+    text-align: center;
+    padding: 2rem;
+    color: #aaa;
+}
+
+.table-empty strong {
+    color: #00ff00;
+}
+
+/* Animación de ordenamiento */
+.machines-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+/* Highlight para búsqueda */
+.highlight {
+    background-color: rgba(255, 255, 0, 0.3);
+    padding: 0.1rem 0.2rem;
+    border-radius: 3px;
+}
