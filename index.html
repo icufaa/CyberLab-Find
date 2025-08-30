@@ -4,106 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberLab Finder - Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #1a1a1a;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 100vh; 
-        }
-
-        .login-container { 
-            background-color: #2d2d2d;
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid #444;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #00ff00;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #aaa;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #ccc;
-        }
-
-        input[type="text"], input[type="password"]{
-            width: 100%;
-            padding: 12px;
-            background-color: #333;
-            border: 1px solid #555;
-            border-radius: 4px;
-            color: #fff;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-
-        input[type="text"]:focus, input[type="password"]:focus{
-            outline: none;
-            border-color: #00ff00;
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background-color: #00ff00;
-            color: #000;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-            font: bold;
-        }
-
-        .login-btn:hover {
-            background-color: #00cc00;
-        }
-
-        .links {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .links a {
-            color: #00ff00;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .links a:hover{
-            text-decoration: underline;
-        }
-     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login=container">
+    <div class="login-container">
         <h1>CyberLab Finder</h1>
         <p class="subtitle">Plataforma de Hacking Etico</p>
         <form id="loginForm">
             <div class="form-group">
-                <hr>
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required autocomplete="username" maxlength="20" pattern="[a-zA-Z0-9_-]{3,20}" title="Solo letras, numeros, guiones y guiones bajos (3-20 caracteres)">
             </div>
@@ -117,143 +25,11 @@
         </form>
 
         <div class="links">
-            <hr>
-            <a href="#">Olvidé mi contraseña</a>
-            <hr>
+            <a href="#">Olvidé mi contraseña</a> |
             <a href="#">Registrarme</a>
-            <hr>
+            
         </div>
     </div>
-
-    <script>
-        // para limpiar y validar input (XSS)
-        function sanitizeInput(input){
-            return input.replace(/[<>\"'&]/g, function(match){
-                const escapeMap = {
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#x27;',
-                    '&': '&amp'
-                };
-                return escapeMap[match];
-            });
-        }
-
-        // validar formato de usuario (solo letras, numeros y guiones)
-        function valideUsername(username){
-            const usernameRegex = /^[a-zA-Z0-9_-]{3,20}$/;
-            return usernameRegex.test(username);
-        }
-
-        //validar fortaleza de contraseña
-        function validePassword(password){
-            // Minimo 8 caracteres, al menos una mayuscula, una minuscula y un numero
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@!%*?&]{8,}$/;
-            return passwordRegex.test(password);
-        }
-
-        // mostrar errores
-        function showError(message){
-            // eliminar el error anterior si es que existe
-            const existingError = document.querySelector('.error-message');
-            if (existingError){
-                existingError.remove();
-            }
-
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-mesage';
-            errorDiv.style.cssText = 'color: #ff4444; text-align: center; margin-top: 15px; font-size 14px';
-            errorDiv.textContent = message;
-
-            document.querySelector('.login-container').appendChild(errorDiv);
-
-            // sacar el error despues de 5 seg
-            setTimeout(()=>{
-                errorDiv.remove();
-            },5000);
-        }
-
-        // rate limiting simple para prevenir ataques de fb
-        let loginAttemps = 0;
-        let lastAttemp = 0;
-        
-        document.getElementById('loginForm').addEventListener('submit', function(e){
-            e.preventDefault();
-
-            const now = Date.now();
-            const timeDiff = now - lastAttemp;
-
-            // limite de 5 intentos por minuto
-            if (loginAttemps >= 5 && timeDiff < 60000){
-                showError('[!] Te pasaste de intentos, espera 1 minuto y probá de nuevo');
-                return;
-            }
-
-            // reiniciar el contador cuando paso mas de 1 minuto
-            if (timeDiff > 60000) {
-                loginAttemps = 0;
-            }
-
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-
-            // validaciones de segurdiad
-            if (!username || !password){
-                showError('[!] Completa todos los campos');
-                return;
-            }
-
-            if (!valideUsername(username)){
-                showError('[!] Usuario invalido. Solo letras, numeros, guiones y guiones bajos (3-20 caracteres)');
-                return;
-            }
-
-            if (password.length <8){
-                showError('[!] Cortina la contrasena');
-                return;
-            }
-
-            // limpiar los inputs para prevenir el XSS
-            const cleanUsername = sanitizeInput(username);
-
-            loginAttemps++;
-            lastAttemp = now;
-
-            // Simulacion del delay para prevenir timing attacks
-            setTimeout(()=>{
-                // aca va la conexion de la DB, por ahora simu no mas
-
-                //usr de prueba
-                const validUsers = {
-                    'admin': 'Admin123!',
-                    'user1': 'User123!'
-                };
-
-                if (validUsers[cleanUsername] && validUsers[cleanUsername] === password){
-                    // credenciales exitosas - reset de intentos
-                    loginAttemps = 0;
-                    alert('[+] Has iniciado session!' + cleanUsername);
-                    //window.location.href ='dashboard.html'; //redireccionar
-                } else {
-                    showError('[!] Credenciales Incorrectas.')
-                }
-            }, 1000); // el delay es para prevenir timing attacks, SQLI por ejemplo
-        });
-        // que no puedan copiar/pegar en campos sensibles
-        document.getElementById('password').addEventListener('paste',function(e){
-            e.preventDefault();
-            showError('[!] No se permite pegar en el campo de contraseñas, tipea.')
-        });
-
-        //limpiar campos al recargar para prevenir autocomplete maligno
-        window.addEventListener('load',function(){
-            document.getElementById('username').value= '';
-            document.getElementById('password').value= '';
-            
-        });
-
-        
-    </script>
+    <script src="login.js"></script>
 </body>
 </html>
