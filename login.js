@@ -95,7 +95,7 @@ function handleLogin(e) {
     // cambio de boton
     const loginBtn = document.querySelector('.login-btn');
     const originalText = loginBtn.textContent;
-    loginBtn.textContent = '[/] Verificando...';
+    loginBtn.textContent = '[+] Verificando...';
     loginBtn.disabled = true;
     
     // prara prevenir timing attack, despues implementar en la db
@@ -104,7 +104,8 @@ function handleLogin(e) {
         // diccionario de users
         const validUsers = {
             'admin': 'Admin123!',
-            'user1': 'User123!'
+            'root': 'Root123!',
+            'user1': 'User123!'           
         };
         
         if (validUsers[cleanUsername] && validUsers[cleanUsername] === password) {
