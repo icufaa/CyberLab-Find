@@ -1,3 +1,11 @@
+function accessMachine(machineId){
+    showAlert(`[+] Iniciando acceso a la máquina: ${machineId.toUpperCase()}\n\nsin funcionalidad.`);
+}
+//detalles de la maquina
+function viewMachineDetails(machineId) {
+    window.location.href = `machine-details.html?id=${machineId}`;
+}
+
 function showAlert() {
     alert(message);
 }
