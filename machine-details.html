@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberLab Finder - Detalles de Máquina</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="machine-details.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>CyberLab Finder</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html#machines">Maquinas</a></li>
+                <li><a href="dashboard.html#labs">Laboratorios</a></li>
+                <li><a href="dashboard.html#tools">Herramientas</a></li>
+                <li><a href="dashboard.html#contact">Contacto</a></li>
+                <li><a href="index.html" class="logout">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="dashboard.html">Dashboard</a> > <span id="current-machine">Maquina</span>
+        </div>
+
+        <section class="machine-detail">
+            <div class="machine-header">
+                <div class="machine-info">
+                    <h1 id="machine-name">Cargando...</h1>
+                    <span id="machine-difficulty" class="difficulty">Cargando...</span>
+                </div>
+                <div class="machine-actions">
+                    <button class="btn btn-primary btn-large" id="access-btn">
+                        Iniciar Laboratorio
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.history.back()">
+                        Volver
+                    </button>
+                </div>
+            </div>
+
+            <div class="machine-content">
+                <div class="content-grid">
+                    <div class="main-info">
+                        <article class="info-card">
+                            <h2>Descripción</h2>
+                            <p id="machine-description">Cargando descripción...</p>
+                        </article>
+
+                        <article class="info-card">
+                            <h2>Objetivos de Aprendizaje</h2>
+                            <ul id="learning-objectives">
+                                <li>Cargando objetivos...</li>
+                            </ul>
+                        </article>
+
+                        <article class="info-card">
+                            <h2>Herramientas Recomendadas</h2>
+                            <div class="tools-grid" id="recommended-tools">
+                                <span class="tool-tag">Cargando...</span>
+                            </div>
+                        </article>
+
+                        <article class="info-card">
+                            <h2>Guías y Referencias</h2>
+                            <div class="references" id="references">
+                                <p>Cargando referencias...</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <aside class="sidebar">
+                        <div class="info-card specs">
+                            <h2>Especificaciones</h2>
+                            <div class="spec-item">
+                                <strong>Sistema Operativo:</strong>
+                                <span id="machine-os">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Servicios:</strong>
+                                <span id="machine-services">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Puertos Abiertos:</strong>
+                                <span id="machine-ports">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Vulnerabilidades:</strong>
+                                <span id="machine-vulns">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <strong>Tiempo Estimado:</strong>
+                                <span id="estimated-time">-</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card progress">
+                            <h2>Tu Progreso</h2>
+                            <div class="checklist">
+                                <div class="check-item">
+                                    <input type="checkbox" id="check1" disabled>
+                                    <label for="check1">Primer Acceso</label>
+                                </div>
+                                <div class="check-item">
+                                    <input type="checkbox" id="check2" disabled>
+                                    <label for="check2">Reconocimiento Completado</label>
+                                </div>
+                                <div class="check-item">
+                                    <input type="checkbox" id="check3" disabled>
+                                    <label for="check3">Vulnerabilidad Encontrada</label>
+                                </div>
+                                <div class="check-item">
+                                    <input type="checkbox" id="check4" disabled>
+                                    <label for="check4">Explotación Exitosa</label>
+                                </div>
+                                <div class="check-item">
+                                    <input type="checkbox" id="check5" disabled>
+                                    <label for="check5">Acceso Root Obtenido</label>
+                                </div>
+                            </div>
+                            <p class="progress-text">0/5 Completado</p>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-machines">
+            <h2>Máquinas Relacionadas</h2>
+            <div class="related-grid">
+                <article class="related-card">
+                    <h3>Metasploitable 3</h3>
+                    <span class="difficulty medium">Medio</span>
+                    <p>Versión más avanzada</p>
+                </article>
+                <article class="related-card">
+                    <h3>bWAPP</h3>
+                    <span class="difficulty easy">Facil</span>
+                    <p>Similar a DVWA</p>
+                </article>
+                <article class="related-card">
+                    <h3>Mutillidae</h3>
+                    <span class="difficulty medium">Medio</span>
+                    <p>Web vulnerabilities</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CyberLab Finder - Plataforma Educativa de Ciberseguridad</p>
+    </footer>
+
+    <script src="machine-details.js"></script>
+</body>
+</html>

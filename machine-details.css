@@ -1,0 +1,300 @@
+/* Estilos específicos para machine-details.html */
+
+.breadcrumb {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.machine-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+}
+
+.machine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #2d2d2d, #1a1a2e);
+    border-radius: 12px;
+    border: 1px solid #444;
+}
+
+.machine-info h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+}
+
+.machine-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: sticky;
+    top: 120px;
+}
+
+.info-card {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: border-color 0.3s;
+}
+
+.info-card:hover {
+    border-color: #00ff00;
+}
+
+.info-card h2 {
+    color: #00ff00;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.info-card p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.info-card ul {
+    color: #ccc;
+    padding-left: 1.5rem;
+}
+
+.info-card ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tool-tag {
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.references a {
+    color: #00d4ff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.references a:hover {
+    text-decoration: underline;
+}
+
+.specs .spec-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #444;
+}
+
+.specs .spec-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.specs .spec-item strong {
+    color: #00ff00;
+    font-size: 0.9rem;
+}
+
+.specs .spec-item span {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Estilos para checklist */
+.checklist {
+    margin-bottom: 1rem;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.check-item:hover {
+    background-color: rgba(0, 255, 0, 0.05);
+}
+
+.check-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #00ff00;
+    cursor: pointer;
+}
+
+.check-item input[type="checkbox"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.check-item label {
+    color: #ccc;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.check-item input[type="checkbox"]:checked + label {
+    color: #00ff00;
+    text-decoration: line-through;
+}
+
+.progress-text {
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Estilos para valoracion */
+.rating-info {
+    text-align: center;
+}
+
+.rating-score {
+    font-size: 2rem;
+    color: #00ff00;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.rating-count {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+/* Estilos para maquinas relacionadas */
+.related-machines {
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 2rem;
+}
+
+.related-machines h2 {
+    color: #00ff00;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.related-card {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.related-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ff00;
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.2);
+}
+
+.related-card h3 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.related-card p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .machine-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .machine-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .machine-info h1 {
+        font-size: 2rem;
+    }
+}
