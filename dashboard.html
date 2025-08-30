@@ -25,70 +25,70 @@
     <main>
         <section id="hero" class="hero-section">
             <h2>Bienvenido al Dashboard</h2>
-            <p>Explora maquinas, laboratorios y herramientas para hacking etico</p>
+            <p>Explora máquinas, laboratorios y herramientas para hacking ético</p>
         </section>
-    
+
         <section id="machines" class="machines-section">
-            <h2>Maquinas Disponibles</h2>
+            <h2>Máquinas Disponibles</h2>
             <div class="machines-grid">
-                <article class="machine-card">
+                <article class="machine-card" data-machine-id="metasploitable2">
                     <header class="card-header">
                         <h3>Metasploitable 2</h3>
-                        <span class="difficulty easy">Facil</span>
+                        <span class="difficulty easy">Fácil</span>
                     </header>
                     <div class="card-content">
-                        <p>Maquina vulnerable disenada para practicar tecnicas de penetration testing.</p>
+                        <p>Máquina vulnerable diseñada para practicar técnicas de penetration testing.</p>
                         <ul>
                             <li>OS: Linux Ubuntu</li>
                             <li>Servicios: SSH, FTP, HTTP</li>
-                            <li>Vulnerabilidades: Multiples</li>
+                            <li>Vulnerabilidades: Múltiples</li>
                         </ul>
                     </div>
                     <footer class="card-actions">
-                        <button class="btn btn-primary">Acceder</button>
-                        <button class="btn btn-secondary">Info</button>
+                        <button class="btn btn-primary" onclick="accessMachine('metasploitable2')">Acceder</button>
+                        <button class="btn btn-secondary" onclick="viewMachineDetails('metasploitable2')">Ver Detalles</button>
                     </footer>
                 </article>
 
-                <article class="machine-card">
+                <article class="machine-card" data-machine-id="dvwa">
                     <header class="card-header">
                         <h3>DVWA</h3>
                         <span class="difficulty medium">Medio</span>
                     </header>
                     <div class="card-content">
-                        <p>Damn Vulnerable Wep Application para practicar ataques web.</p>
+                        <p>Damn Vulnerable Web Application para practicar ataques web.</p>
                         <ul>
                             <li>OS: Linux/Windows</li>
-                            <li>Tecnologia: PHP/MySQL</li>
+                            <li>Tecnología: PHP/MySQL</li>
                             <li>Vulnerabilidades: OWASP Top 10</li>
                         </ul>
                     </div>
                     <footer class="card-actions">
-                        <button class="btn btn-primary">Acceder</button>
-                        <button class="btn btn-secondary">Info</button>
+                        <button class="btn btn-primary" onclick="accessMachine('dvwa')">Acceder</button>
+                        <button class="btn btn-secondary" onclick="viewMachineDetails('dvwa')">Ver Detalles</button>
                     </footer>
                 </article>
 
-                <article class="machine-card">
+                <article class="machine-card" data-machine-id="htb-lame">
                     <header class="card-header">
                         <h3>HackTheBox - Lame</h3>
-                        <span class="difficulty hard">Dificil</span>
+                        <span class="difficulty hard">Difícil</span>
                     </header>
                     <div class="card-content">
-                        <p>Maquina clasica de HTB para practicar exploits avanzados.</p>
+                        <p>Máquina clásica de HTB para practicar exploits avanzados.</p>
                         <ul>
-                            <li>Os: Linux Ubuntu</li>
+                            <li>OS: Linux Ubuntu</li>
                             <li>Servicios: Samba, SSH</li>
                             <li>CVE: CVE-2007-2447</li>
                         </ul>
                     </div>
                     <footer class="card-actions">
-                        <button class="btn btn-primary">Acceder</button>
-                        <button class="btn btn-secondary">Info</button>
+                        <button class="btn btn-primary" onclick="accessMachine('htb-lame')">Acceder</button>
+                        <button class="btn btn-secondary" onclick="viewMachineDetails('htb-lame')">Ver Detalles</button>
                     </footer>
                 </article>
 
-                <article class="machine-card">
+                <article class="machine-card" data-machine-id="webgoat">
                     <header class="card-header">
                         <h3>WebGoat</h3>
                         <span class="difficulty easy">Fácil</span>
@@ -102,12 +102,12 @@
                         </ul>
                     </div>
                     <footer class="card-actions">
-                        <button class="btn btn-primary">Acceder</button>
-                        <button class="btn btn-secondary">Info</button>
+                        <button class="btn btn-primary" onclick="accessMachine('webgoat')">Acceder</button>
+                        <button class="btn btn-secondary" onclick="viewMachineDetails('webgoat')">Ver Detalles</button>
                     </footer>
                 </article>
 
-                <article class="machine-card">
+                <article class="machine-card" data-machine-id="kioptrix">
                     <header class="card-header">
                         <h3>VulnHub - Kioptrix</h3>
                         <span class="difficulty medium">Medio</span>
@@ -121,12 +121,12 @@
                         </ul>
                     </div>
                     <footer class="card-actions">
-                        <button class="btn btn-primary">Acceder</button>
-                        <button class="btn btn-secondary">Info</button>
+                        <button class="btn btn-primary" onclick="accessMachine('kioptrix')">Acceder</button>
+                        <button class="btn btn-secondary" onclick="viewMachineDetails('kioptrix')">Ver Detalles</button>
                     </footer>
                 </article>
 
-                <article class="machine-card">
+                <article class="machine-card" data-machine-id="juiceshop">
                     <header class="card-header">
                         <h3>Juice Shop</h3>
                         <span class="difficulty easy">Fácil</span>
@@ -140,28 +140,26 @@
                         </ul>
                     </div>
                     <footer class="card-actions">
-                        <button class="btn btn-primary">Acceder</button>
-                        <button class="btn btn-secondary">Info</button>
+                        <button class="btn btn-primary" onclick="accessMachine('juiceshop')">Acceder</button>
+                        <button class="btn btn-secondary" onclick="viewMachineDetails('juiceshop')">Ver Detalles</button>
                     </footer>
                 </article>
             </div>
         </section>
 
-    
-
         <section id="stats" class="stats-section">
-            <h2>Estadisticas</h2>
+            <h2>Estadísticas</h2>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <h3>0 / 2</h3>
-                    <p>Maquinas Completadas</p>
+                    <h3>25</h3>
+                    <p>Máquinas Completadas</p>
                 </div>
                 <div class="stat-card">
-                    <h3>0</h3>
+                    <h3>8</h3>
                     <p>Laboratorios Activos</p>
                 </div>
                 <div class="stat-card">
-                    <h3>0</h3>
+                    <h3>156</h3>
                     <p>Herramientas Disponibles</p>
                 </div>
             </div>
@@ -171,45 +169,45 @@
             <h2>Contacto</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Necesitas ayuda?</h3>
-                    <p>Si tenes dudas sobre alguna maquina o necesitas soporte tecnico, no dudes en contactarme</p>
+                    <h3>¿Necesitas ayuda?</h3>
+                    <p>Si tienes dudas sobre alguna máquina o necesitas soporte técnico, no dudes en contactarnos.</p>
                     <address>
-                        <p><strong>Email:</strong> cyberlabfinder@gmail.com</p>
+                        <p><strong>Email:</strong> support@cyberlabfinder.com</p>
                         <p><strong>Discord:</strong> CyberLab Community</p>
                         <p><strong>Horario:</strong> 24/7</p>
                     </address>
                 </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Asunto:</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Selecciona un tema</option>
+                            <option value="technical">Soporte Técnico</option>
+                            <option value="machine">Problema con Máquina</option>
+                            <option value="suggestion">Sugerencia</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
             </div>
-
-            <form class="contact-form" id="contactForm">
-                <div class="form-group">
-                    <label for="name">Nombre:</label>
-                    <input type="text" name="name" id="name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Asunto:</label>
-                    <select name="subject" id="subject" required>
-                        <option value="">Selecciona un tema</option>
-                        <option value="techinal">Soporte Tecnico</option>
-                        <option value="machine">Problema con Maquina</option>
-                        <option value="suggestion">sugerencia</option>
-                        <option value="other">Otro</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-            </form>
         </section>
     </main>
 

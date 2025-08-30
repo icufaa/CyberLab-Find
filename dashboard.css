@@ -11,12 +11,14 @@ body {
     line-height: 1.6;
 }
 
+/* Header y Navigation */
 header {
-    background-color: #2d2d2d;
-    border-bottom: 2px solid #00ff00;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a2e 100%);
+    border-bottom: 3px solid #00ff00;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar {
@@ -30,38 +32,80 @@ header {
 
 .nav-brand h1 {
     color: #00ff00;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.nav-menu li {
+    margin: 0;
 }
 
 .nav-menu a {
-    color: #fff;
+    color: #ccc;
     text-decoration: none;
-    transition: color 0.3s;
+    padding: 12px 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
 }
 
 .nav-menu a:hover {
     color: #00ff00;
+    background: rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.nav-menu a:hover::before {
+    left: 100%;
 }
 
 .logout {
-    background-color: #ff4444;
-    padding: 0.5 rem 1rem;
-    border-radius: 4px;
+    background: linear-gradient(135deg, #ff4444, #cc0000) !important;
+    color: #fff !important;
+    font-weight: bold;
+    border: 2px solid transparent;
 }
 
 .logout:hover {
-    background-color: #cc0000;
+    background: linear-gradient(135deg, #cc0000, #990000) !important;
     color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 68, 68, 0.3);
 }
 
-/* Main */
+/* Main content */
 main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* hero */
+/* Hero section */
 .hero-section {
     text-align: center;
     margin-bottom: 3rem;
@@ -78,7 +122,7 @@ main {
     color: #aaa;
 }
 
-/* Maquinas */
+/* Machines section */
 .machines-section {
     margin-bottom: 3rem;
 }
@@ -88,10 +132,10 @@ main {
     margin-bottom: 2rem;
     font-size: 2rem;
     border-bottom: 2px solid #444;
-    padding-bottom: 0.5 rem;
+    padding-bottom: 0.5rem;
 }
 
-/* grid para Maquinas */
+/* Grid para máquinas */
 .machines-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -152,14 +196,14 @@ main {
     padding: 1rem;
 }
 
-.card-conten p {
+.card-content p {
     color: #ccc;
     margin-bottom: 1rem;
 }
 
 .card-content ul {
     list-style: none;
-    color: aaa;
+    color: #aaa;
 }
 
 .card-content ul li {
@@ -175,7 +219,7 @@ main {
     left: 0;
 }
 
-.card-action {
+.card-actions {
     padding: 1rem;
     display: flex;
     gap: 1rem;
@@ -183,7 +227,6 @@ main {
 }
 
 /* Botones */
-
 .btn {
     padding: 0.7rem 1.5rem;
     border: none;
@@ -203,18 +246,18 @@ main {
     background-color: #00cc00;
 }
 
-.btn-seconday {
+.btn-secondary {
     background-color: transparent;
     color: #00ff00;
     border: 1px solid #00ff00;
 }
 
-.btn-seconday::hover {
+.btn-secondary:hover {
     background-color: #00ff00;
     color: #000;
 }
 
-/*Estadisticas*/
+/* Stats section */
 .stats-section {
     margin-bottom: 3rem;
 }
@@ -253,8 +296,7 @@ main {
     color: #aaa;
 }
 
-/* Contacto */
-
+/* Contact section */
 .contact-section {
     margin-bottom: 3rem;
 }
@@ -293,13 +335,16 @@ main {
     margin-bottom: 0.5rem;
 }
 
-/* Formulario contacto*/
-
+/* Formulario de contacto */
 .contact-form {
     background-color: #2d2d2d;
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid #444;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
@@ -328,8 +373,12 @@ main {
     border-color: #00ff00;
 }
 
-/* footer */
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
 
+/* Footer */
 footer {
     background-color: #2d2d2d;
     text-align: center;
@@ -338,20 +387,19 @@ footer {
     color: #aaa;
 }
 
-/*responsive*/
-
-@media (max-width: 768px){
-    .navbar{
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
         flex-direction: column;
         gap: 1rem;
         padding: 1rem;
     }
 
     .nav-menu {
-        gap:1rem;
+        gap: 1rem;
     }
 
-    .hero-section h2{
+    .hero-section h2 {
         font-size: 2rem;
     }
 
@@ -359,17 +407,17 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .stats-grid{
+    .stats-grid {
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-container{
+    .contact-container {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .card-action{
+    .card-actions {
         flex-direction: column;
     }
 }
