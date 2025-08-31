@@ -69,34 +69,6 @@ Para acceder a la plataforma, utiliza una de las siguientes credenciales de prue
 
 > **Nota:** Las contraseñas deben cumplir con los requisitos de seguridad (mínimo 8 caracteres, al menos una mayúscula, una minúscula y un número).
 
-## 🛠️ Instalación y Uso
-
-### Requisitos
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Servidor web local (opcional para desarrollo)
-
-### Instalación Local
-
-1. **Clonar o descargar** todos los archivos en una carpeta local
-
-2. **Estructura de archivos:** Asegúrate de que todos los archivos estén en la misma carpeta:
-   ```
-   proyecto/
-   ├── index.html
-   ├── styles.css
-   ├── login.js
-   ├── dashboard.html
-   ├── dashboard.css
-   ├── dashboard.js
-   ├── machines-table.html
-   ├── machines-table.css
-   ├── machines-table.js
-   ├── machine-details.html
-   ├── machine-details.css
-   └── machine-details.js
-   ```
-
-
 
 ### Navegación
 
@@ -169,24 +141,14 @@ La plataforma incluye **6 máquinas virtuales** para práctica:
 - Sistema de progreso con checkboxes
 - Máquinas relacionadas
 
-### Agregar Máquinas
-Edita el archivo `machine-details.js` en el objeto `machinesData` para agregar nuevas máquinas.
-
-### Modificar Estilos
-Los archivos CSS están organizados por página:
-- `styles.css` - Login
-- `dashboard.css` - Dashboard y estilos generales
-- `machines-table.css` - Tabla específica
-- `machine-details.css` - Detalles específicos
 
 
-### Para Estudiantes
+### Referencias
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 - [Metasploit Unleashed](https://www.metasploit.com/)
 - [VulnHub](https://www.vulnhub.com/)
 - [HackTheBox](https://www.hackthebox.eu/)
 
-### Para Desarrolladores
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [JavaScript Security](https://cheatsheetseries.owasp.org/cheatsheets/JavaScript_Security_Cheat_Sheet.html)
