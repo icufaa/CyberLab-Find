@@ -151,7 +151,7 @@ La plataforma incluye **6 máquinas virtuales** para práctica:
 
 - [MDN Web Docs](https://developer.mozilla.org/)
 - [CSS Grid Guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [JavaScript Security](https://cheatsheetseries.owasp.org))
+- [JavaScript Security](https://cheatsheetseries.owasp.org)
 
 
 
